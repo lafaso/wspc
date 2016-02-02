@@ -1,5 +1,6 @@
 *.iml 
 *.project
 *.classpath
-/d/workspace/AjaxBehind/target
-/d/workspace/AjaxBehind/.idea
+/d/workspace/AjaxBehind/wspc/target
+/d/workspace/AjaxBehind/wspc/.idea
+
