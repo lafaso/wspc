@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wspc.common.dao.PermissionDao">
+	<select id="findAllPermissions" parameterType="java.lang.Integer" resultType="java.lang.String">
+		SELECT fp.url url
+		FROM fw_permission  fp 
+		INNER JOIN fw_role_permission frp ON fp.permission_id=frp.permission_id 
+		INNER JOIN fw_role fr ON frp.role_id = fr.role_id 
+		INNER JOIN fw_role_user fru ON fr.role_id = fru.role_id 
+		INNER JOIN fw_user fu ON fru.user_id = fu.id
+		WHERE fu.id = #{userId,jdbcType=INTEGER}
+	</select>
+	
+</mapper>
